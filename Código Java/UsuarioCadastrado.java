@@ -15,9 +15,18 @@ public class UsuarioCadastrado {
 	
 	//Métodos
 	protected void realizarEmprestimo(exemplar exemplarAPegarEmprestado) {
-		if(exemplaresEmprestados.length < N && titulosPerdidos.length == 0 && podeRealizarEmprestimo) {
-			exemplaresEmprestados = append(exemplaresEmprestados, exemplarAPegarEmprestado);
-		}
+		if(exemplaresEmprestados.length >= N) {
+            System.out.println("Não pode realizar empréstimo, pois já possui 3 exemplares emprestados");
+            return;
+        } 
+        if(titulosPerdidos.length != 0) {
+            System.out.println("Não pode realizar empréstimo, pois possui títulos perdidos");
+            return;
+        } if(!podeRealizarEmprestimo) {
+            System.out.println("Não pode realizar empréstimo, pois possui títulos atrasados");
+            return;
+        }
+        exemplaresEmprestados.add(exemplarAPegarEmprestado);
 	}
 	
 	protected String consultarStatusEmprestimo() {
