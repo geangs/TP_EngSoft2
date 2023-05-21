@@ -1,5 +1,4 @@
 package dcc603.biblioteca;
-import java.util.ArrayList;
 
 /**
  * Um exemplar é uma unidade atômica de um título.
@@ -16,16 +15,14 @@ public class Exemplar {
     private int daysLoaned = 0;
     private int daysInReserve = 0;
 
-    // daysLoaned > title->loanPeriod ? TRUE : FALSE;
     private boolean isLate = false;
 
-    // daysInReserve > 6 title->reservePeriod ? FALSE : TRUE;
     private boolean keptAsReserve = false;
 
     // ------------------Construtor-------------------------
     // Todo exemplar é criado com variáveis padrão, à serem
     // modificadas durante a execução do código.
-    public Exemplar() {}
+    public Exemplar(/*Constroi com variaveis padrão*/) {} //
 
 	// -------------------Métodos---------------------------
 
