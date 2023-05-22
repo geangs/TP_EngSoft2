@@ -9,14 +9,66 @@ public class Exemplar {
 		setEstaReservado(novoEstaAtrasado);
 		setExemplares(novoEstaReservado);
 	}
-	
-	//Atributos
+
 	protected boolean emprestado;
 	protected boolean perdido;
 	protected int diasEmprestado;
 	protected int diasReservado;
 	protected boolean estaAtrasado;
 	protected boolean estaReservado;
+
+	private Main(boolean emprestado, boolean perdido, int diasEmprestado, int diasReservado,
+				 boolean estaAtrasado, boolean estaReservado) {
+		this.emprestado = emprestado;
+		this.perdido = perdido;
+		this.diasEmprestado = diasEmprestado;
+		this.diasReservado = diasReservado;
+		this.estaAtrasado = estaAtrasado;
+		this.estaReservado = estaReservado;
+	}
+
+	public static class Builder {
+		private boolean emprestado;
+		private boolean perdido;
+		private int diasEmprestado;
+		private int diasReservado;
+		private boolean estaAtrasado;
+		private boolean estaReservado;
+
+		public Builder setEmprestado(boolean emprestado) {
+			this.emprestado = emprestado;
+			return this;
+		}
+
+		public Builder setPerdido(boolean perdido) {
+			this.perdido = perdido;
+			return this;
+		}
+
+		public Builder setDiasEmprestado(int diasEmprestado) {
+			this.diasEmprestado = diasEmprestado;
+			return this;
+		}
+
+		public Builder setDiasReservado(int diasReservado) {
+			this.diasReservado = diasReservado;
+			return this;
+		}
+
+		public Builder setEstaAtrasado(boolean estaAtrasado) {
+			this.estaAtrasado = estaAtrasado;
+			return this;
+		}
+
+		public Builder setEstaReservado(boolean estaReservado) {
+			this.estaReservado = estaReservado;
+			return this;
+		}
+
+		public Main build() {
+			return new Main(emprestado, perdido, diasEmprestado, diasReservado, estaAtrasado, estaReservado);
+		}
+	}
 	
 	//Métodos
 	protected void alterarStatus(boolean novoStatus) {
