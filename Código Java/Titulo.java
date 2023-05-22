@@ -3,22 +3,22 @@
 public class Titulo {
 
 	//Construtor
-	public Titulo(String novoNome, String novoAutor, int novoPeriodoEmprestimo, int novoPeriodoReserva, String novaDescricao, Exemplar[] novosExemplares) {
+	public Titulo(String novoNome, String novoAutor, int novoPeriodoEmprestimo, int novoPeriodoReserva, String novaDescricao, Exemplar[] exemplares2) {
 		setNome(novoNome);
 		setAutor(novoAutor);
 		setPeriodoEmprestimo(novoPeriodoEmprestimo);
 		setPeriodoReserva(novoPeriodoReserva);
 		setDescricao(novaDescricao);
-		setExemplares(novosExemplares);
+		setExemplares(exemplares2);
 	}
-	
+
 	//Atributos
 	protected String nome;
 	protected String autor;
 	protected int periodoEmprestimo;
 	protected int periodoReverva;
 	protected String descricao;
-	protected Exemplar[] exemplares = new Exemplar[N];
+	protected Exemplar[] exemplares = new Exemplar[NovoExemplar];
 	
 	//Sets
 	private void setNome(String novoNome) {

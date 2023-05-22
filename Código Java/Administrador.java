@@ -24,16 +24,17 @@ public class Administrador {
 		Periodico novoPeriodico = new Periodico(diaContratado, periodo, valor);
 	}
 
+
 	private void removerUsuario(Usuario usuarioARemover) {
 		usuarioARemover = null;
 	}
 	
 	//Sets
-	private setLogin(String novoLogin) {
+	private void setLogin(String novoLogin) {
 		login = novoLogin;
 	}
 	
-	private setSenha(String novaSenha) {
+	private void setSenha(String novaSenha) {
 		senha = novaSenha;
 	}
 	
