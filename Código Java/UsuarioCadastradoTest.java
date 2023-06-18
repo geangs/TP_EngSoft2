@@ -1,29 +1,33 @@
 import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
 
 public class UsuarioCadastradoTest {
 	
-	//Construtor
-	public void TestUsuarioCadastrado() {
-		
-		UsuarioCadastrado usuario = new UsuarioCadastrado();
-		
+	private UsuarioCadastrado usuario;
+	
+	@Before
+	public void setUp() {
+		usuario = new UsuarioCadastrado();
+	}
+	
+	@Test
+	public void testUsuarioCadastrado() {
 		usuario.UsuarioCadastrado("Maria", "11122233345");
 		
-		assertEquals("Maria", usuario.getNome() );
-		assertEquals("11122233345", usuario.getCpf() );
-		
+		assertEquals("Maria", usuario.getNome());
+		assertEquals("11122233345", usuario.getCpf());
 	}
 	
-	public void TestConsultarStatusEmprestimo() {
-		
-		assertEquals(usuario.consultarStatusEmprestimo(), "Pode realizar empréstimo");
-		
+	@Test
+	public void testConsultarStatusEmprestimo() {
+		assertEquals("Pode realizar empréstimo", usuario.consultarStatusEmprestimo());
 	}
 	
-	public void TestRealizarEmprestimo() {
-		
-		assertEquals(1, usuario.podeRealizarEmprestimo);
+	@Test
+	public void testRealizarEmprestimo() {
+		assertEquals(1, usuario.getPodeRealizarEmprestimo());
 		usuario.realizarEmprestimo("Pequeno Principe");
-		assertEquals(0, usuario.podeRealizarEmprestimo);
+		assertEquals(0, usuario.getPodeRealizarEmprestimo());
 	}
 }

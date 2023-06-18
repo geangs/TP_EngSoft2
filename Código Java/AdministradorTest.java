@@ -1,24 +1,29 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import org.junit.Before;
+import org.junit.Test;
 
 public class AdministradorTest {
 	
-	public void TestAdministradorCadastro() {
-		
-		Administrador administrador = new Administrador();
-		
+	private Administrador administrador;
+	
+	@Before
+	public void setUp() {
+		administrador = new Administrador();
+	}
+	
+	@Test
+	public void testAdministradorCadastro() {
 		administrador.Administrador("adm1", "senha123");
 		
-		assertEquals("adm1", administrador.login );
-		assertEquals("senha123", administrador.senha );	
-	
+		assertEquals("adm1", administrador.getLogin());
+		assertEquals("senha123", administrador.getSenha());	
 	}
 	
-	public void TestRemoverUsuario() {
-		
+	@Test
+	public void testRemoverUsuario() {
 		administrador.removerUsuario("Maria");
-		assertNotEquals("Maria", usuario);
-	}
 		
-
+		assertNotEquals("Maria", administrador.getUsuario());
+	}
 }
-

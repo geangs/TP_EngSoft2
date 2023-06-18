@@ -1,25 +1,28 @@
 import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
 
-
-public class TestUsuarioNaoCadastrado{
+public class TestUsuarioNaoCadastrado {
 	
-	//Construtor
-	public void TestUsuarioNaoCadastrado() {
-		
-		UsuarioNaoCadastrado usuario = new UsuarioNaoCadastrado();
-		
+	private UsuarioNaoCadastrado usuario;
+	
+	@Before
+	public void setUp() {
+		usuario = new UsuarioNaoCadastrado();
+	}
+	
+	@Test
+	public void testUsuarioNaoCadastrado() {
 		usuario.UsuarioNaoCadastrado("Joao");
 		
-		assertEquals("Joao", usuario.nome);
-		
+		assertEquals("Joao", usuario.getNome());
 	}
 	
-	public void TestSolicitarcadastro(){
+	@Test
+	public void testSolicitarCadastro() {
+		usuario.solicitarCadastro("12345678912");
 		
-		usuario.solicitarCadastro("12345678912")
-		
-		assertEquals("Joao", usuario.nome);
-		assertEquals("12345678912", usuario.cpf);
+		assertEquals("Joao", usuario.getNome());
+		assertEquals("12345678912", usuario.getCpf());
 	}
-	
 }
