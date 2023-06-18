@@ -1,0 +1,23 @@
+name: Testes Automatizados
+
+on: [push]
+
+jobs:
+  testar:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Checkout do código-fonte
+      uses: actions/checkout@v2
+
+    - name: Configurar ambiente Java
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+
+    - name: Compilar e executar testes
+      run: |
+        ./gradlew test
